@@ -1,10 +1,7 @@
-from fastapi import FastAPI, Depends, status, Response, HTTPException
-from sqlalchemy.orm import Session
-from typing import List
-from . import schemas, models
-from .database import engine, SessionLocal, get_db
+from fastapi import FastAPI
+from . import models
+from .database import engine
 import uvicorn
-from .hashing import Hash
 from .routers import blog, user
 
 app = FastAPI()
