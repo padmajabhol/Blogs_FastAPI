@@ -1,6 +1,9 @@
 from pydantic import BaseModel
 from typing import List
 
+class Login(BaseModel):
+    username: str
+    password: str
 
 class BlogBase(BaseModel):
     title: str
