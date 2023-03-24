@@ -6,6 +6,8 @@ from sqlalchemy.orm import relationship
 
 # blog is the extended base of the database
 
+# define all fields inside the table
+
 
 class Blog(Base):
     __tablename__ = 'blogs'

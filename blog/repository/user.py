@@ -3,6 +3,8 @@ from fastapi import status, HTTPException
 from sqlalchemy.orm import Session
 from ..hashing import Hash
 
+# function to create user
+
 
 def create(request: schemas.User, db: Session):
     new_user = models.User(
@@ -11,6 +13,8 @@ def create(request: schemas.User, db: Session):
     db.commit()
     db.refresh(new_user)
     return new_user
+
+# function to get an user with id
 
 
 def show(id: int, db: Session):

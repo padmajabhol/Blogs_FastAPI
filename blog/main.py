@@ -1,18 +1,21 @@
+# libraries
 from fastapi import FastAPI
+import uvicorn
+# files
 from . import models
 from .database import engine
-import uvicorn
 from .routers import blog, user, authentication
 
+# instance of the fastAPI
 app = FastAPI()
 
 # create all the models to the database
 models.Base.metadata.create_all(engine)
 
+# include routers
 app.include_router(authentication.router)
 app.include_router(blog.router)
 app.include_router(user.router)
-
 
 
 if __name__ == '__main__':
