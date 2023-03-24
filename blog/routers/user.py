@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 from .. import schemas, database
 from ..repository import user
 
-router = APIRouter(prefix='/user', tags=['user'])
+router = APIRouter(prefix='/users', tags=['user'])
 
 # routers for user
 

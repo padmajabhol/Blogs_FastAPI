@@ -5,7 +5,7 @@ from .. import schemas, database, oauth2
 from ..repository import blog
 
 
-router = APIRouter(prefix="/blog", tags=['blogs'])
+router = APIRouter(prefix="/blogs", tags=['blogs'])
 
 # Blog routes
 
@@ -17,6 +17,8 @@ def all(db: Session = Depends(database.get_db), current_user: schemas.User = Dep
     return blog.get_all(db)
 
 # Create blog
+
+# TODO handle failure case
 
 
 @router.post('/', status_code=status.HTTP_201_CREATED)
